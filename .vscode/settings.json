@@ -12,4 +12,10 @@
     "*.css": "postcss",
   },
   "editor.formatOnSave": false,
+  "stylelint.validate": [
+    "css",
+    "less",
+    "postcss",
+    "vue"
+  ],
 }
