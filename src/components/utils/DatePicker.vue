@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import format from 'date-fns/format'
+import { format } from 'date-fns'
 import { DAYS, MONTHS_LIST, getYearList, isLeapYear } from '@/utils/dates.utils'
 import IconClose from '~icons/ep/close-bold'
 
