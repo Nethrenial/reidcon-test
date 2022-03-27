@@ -11,14 +11,24 @@ export const useLayoutStore = defineStore('layout', () => {
    */
   const sidebarWidth = computed<'250px'|'0px'>(() => (isSidebarOpen.value ? '250px' : '0px'))
 
+  /**
+   * True if sidebar is transitioning, false otherwise
+   */
+  const isSidebarTransitioning = ref<boolean>(false)
+
   function toggleSidebar(): void {
+    isSidebarTransitioning.value = true
     isSidebarOpen.value = !isSidebarOpen.value
   }
 
+  const addTaskModelOpen = ref<boolean>(false)
+
   return {
     isSidebarOpen,
+    isSidebarTransitioning,
     sidebarWidth,
     toggleSidebar,
+    addTaskModelOpen,
   }
 })
 

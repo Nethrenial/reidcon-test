@@ -1,5 +1,17 @@
+:root {
+  --color-dark: rgb(35, 37, 44);
+  --color-darker: #101015;
+  --color-light: #fbfbfb;
+  --main-gradient: linear-gradient(to right bottom, #ff1884, rgb(252, 81, 1));
+  --main-transition: all 0.3s ease-in-out;
+}
+
 html.dark {
   background: #121212;
+}
+
+body {
+  font-family: 'Quicksand', sans-serif;
 }
 
 #nprogress {
@@ -7,7 +19,7 @@ html.dark {
 }
 
 #nprogress .bar {
-  background: rgb(13,148,136);
+  background-image: var(--main-gradient);
   opacity: 0.75;
   position: fixed;
   z-index: 1031;

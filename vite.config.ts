@@ -10,11 +10,13 @@ import { VitePWA } from 'vite-plugin-pwa'
 import VueI18n from '@intlify/vite-plugin-vue-i18n'
 import Inspect from 'vite-plugin-inspect'
 import WindiCSS from 'vite-plugin-windicss'
+import Icons from 'unplugin-icons/vite'
+import { ViteWebfontDownload } from 'vite-plugin-webfont-dl'
 
 export default defineConfig({
   resolve: {
     alias: {
-      '~/': `${path.resolve(__dirname, 'src')}/`,
+      '@/': `${path.resolve(__dirname, 'src')}/`,
     },
   },
   plugins: [
@@ -22,9 +24,12 @@ export default defineConfig({
       include: [/\.vue$/],
       reactivityTransform: true,
     }),
+    Icons({
+      compiler: 'vue3',
+    }),
 
     WindiCSS(),
-
+    ViteWebfontDownload(['https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;768&display=swap']),
     // https://github.com/hannoeru/vite-plugin-pages
     Pages({
       extensions: ['vue'],
@@ -42,6 +47,8 @@ export default defineConfig({
         'vue/macros',
         '@vueuse/head',
         '@vueuse/core',
+        'pinia',
+
       ],
       dts: 'src/auto-imports.d.ts',
     }),

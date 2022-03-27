@@ -1,8 +1,5 @@
-<script setup lang="ts">
-</script>
-
 <template>
-  <h1 class="text-6xl">
-    Error
-  </h1>
+  <div class="error-container">
+    <router-view />
+  </div>
 </template>

@@ -4,7 +4,26 @@
 
 declare module 'vue' {
   export interface GlobalComponents {
-    BaseButton: typeof import('./components/BaseButton.vue')['default']
+    AddCollection: typeof import('./components/page/tasks/AddCollection.vue')['default']
+    AddTask: typeof import('./components/page/tasks/AddTask.vue')['default']
+    AddTaskForm: typeof import('./components/page/tasks/AddTaskForm.vue')['default']
+    Checkbox: typeof import('./components/utils/Checkbox.vue')['default']
+    ChronologicalView: typeof import('./components/page/tasks/ChronologicalView.vue')['default']
+    CircleRatio: typeof import('./components/utils/CircleRatio.vue')['default']
+    Collapsible: typeof import('./components/utils/Collapsible.vue')['default']
+    CollectionCard: typeof import('./components/page/tasks/CollectionCard.vue')['default']
+    CollectionItem: typeof import('./components/page/dashboard/CollectionItem.vue')['default']
+    CollectionsList: typeof import('./components/page/tasks/CollectionsList.vue')['default']
+    CustomSelect: typeof import('./components/utils/CustomSelect.vue')['default']
+    DailyOverview: typeof import('./components/page/dashboard/DailyOverview.vue')['default']
+    DatePicker: typeof import('./components/utils/DatePicker.vue')['default']
+    FavouriteCollections: typeof import('./components/page/tasks/FavouriteCollections.vue')['default']
+    Modal: typeof import('./components/utils/Modal.vue')['default']
+    TheAppContainer: typeof import('./components/layout/TheAppContainer.vue')['default']
+    TheHeader: typeof import('./components/layout/TheHeader.vue')['default']
+    ThePageContainer: typeof import('./components/layout/ThePageContainer.vue')['default']
+    TheSidebar: typeof import('./components/layout/TheSidebar.vue')['default']
+    UserStatistics: typeof import('./components/page/dashboard/UserStatistics.vue')['default']
   }
 }
 

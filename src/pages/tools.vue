@@ -1,7 +1,8 @@
 <script setup lang="ts">
+import { useHead } from '@vueuse/head'
 
 useHead({
-  title: 'Dashboard - Remembrall',
+  title: 'Tools - Remembrall',
   meta: [
     {
       name: 'description',
@@ -12,15 +13,10 @@ useHead({
 </script>
 
 <template>
-  <h1>Dashboard Page</h1>
-  <RouterLink to="/dashboard">
-    Dashboard
-  </RouterLink>
+  <h1>Tools Page</h1>
 </template>
-
-<!-- <style lang="scss" scoped></style> -->
 
 <route lang="yaml">
 meta:
-  layout: home
+  layout: default
 </route>
