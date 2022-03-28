@@ -1,6 +1,7 @@
 {
-  "extends": "@antfu",
+  "extends": ["@antfu", "plugin:prettier/recommended"],
   "rules": {
+    "prettier/prettier": ["error", { "singleQuote": true }],
     "no-console": "off"
   }
 }

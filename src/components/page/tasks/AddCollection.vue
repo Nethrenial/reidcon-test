@@ -1,13 +1,21 @@
 <script setup lang="ts">
-import IconAdd from '~icons/carbon/add'
-const modalShown = ref(false)
+import IconAdd from '~icons/carbon/add';
+const modalShown = ref(false);
 </script>
 
 <template>
   <div class="add-new" @click="modalShown = true">
     <IconAdd class="icon" />
   </div>
-  <Modal v-if="modalShown" :closable="true" @modal-close="()=>{modalShown = false}" />
+  <Modal
+    v-if="modalShown"
+    :closable="true"
+    @modal-close="
+      () => {
+        modalShown = false;
+      }
+    "
+  />
 </template>
 
 <style lang="scss" scoped>

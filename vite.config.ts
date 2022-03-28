@@ -1,17 +1,17 @@
-import path from 'path'
-import { defineConfig } from 'vite'
-import Vue from '@vitejs/plugin-vue'
-import Pages from 'vite-plugin-pages'
-import generateSitemap from 'vite-ssg-sitemap'
-import Layouts from 'vite-plugin-vue-layouts'
-import Components from 'unplugin-vue-components/vite'
-import AutoImport from 'unplugin-auto-import/vite'
-import { VitePWA } from 'vite-plugin-pwa'
-import VueI18n from '@intlify/vite-plugin-vue-i18n'
-import Inspect from 'vite-plugin-inspect'
-import WindiCSS from 'vite-plugin-windicss'
-import Icons from 'unplugin-icons/vite'
-import { ViteWebfontDownload } from 'vite-plugin-webfont-dl'
+import path from 'path';
+import { defineConfig } from 'vite';
+import Vue from '@vitejs/plugin-vue';
+import Pages from 'vite-plugin-pages';
+import generateSitemap from 'vite-ssg-sitemap';
+import Layouts from 'vite-plugin-vue-layouts';
+import Components from 'unplugin-vue-components/vite';
+import AutoImport from 'unplugin-auto-import/vite';
+import { VitePWA } from 'vite-plugin-pwa';
+import VueI18n from '@intlify/vite-plugin-vue-i18n';
+import Inspect from 'vite-plugin-inspect';
+import WindiCSS from 'vite-plugin-windicss';
+import Icons from 'unplugin-icons/vite';
+import { ViteWebfontDownload } from 'vite-plugin-webfont-dl';
 
 export default defineConfig({
   resolve: {
@@ -29,7 +29,9 @@ export default defineConfig({
     }),
 
     WindiCSS(),
-    ViteWebfontDownload(['https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;768&display=swap']),
+    ViteWebfontDownload([
+      'https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;768&display=swap',
+    ]),
     // https://github.com/hannoeru/vite-plugin-pages
     Pages({
       extensions: ['vue'],
@@ -48,7 +50,6 @@ export default defineConfig({
         '@vueuse/head',
         '@vueuse/core',
         'pinia',
-
       ],
       dts: 'src/auto-imports.d.ts',
     }),
@@ -107,19 +108,14 @@ export default defineConfig({
   ssgOptions: {
     script: 'async',
     formatting: 'minify',
-    onFinished() { generateSitemap() },
+    onFinished() {
+      generateSitemap();
+    },
   },
 
   optimizeDeps: {
-    include: [
-      'vue',
-      'vue-router',
-      '@vueuse/core',
-      '@vueuse/head',
-    ],
-    exclude: [
-      'vue-demi',
-    ],
+    include: ['vue', 'vue-router', '@vueuse/core', '@vueuse/head'],
+    exclude: ['vue-demi'],
   },
 
   // https://github.com/vitest-dev/vitest
@@ -130,4 +126,4 @@ export default defineConfig({
       inline: ['@vue', '@vueuse', 'vue-demi'],
     },
   },
-})
+});

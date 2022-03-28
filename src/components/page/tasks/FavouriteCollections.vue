@@ -1,8 +1,6 @@
 <template>
   <div class="a">
-    <h2 class="text-5xl">
-      Favourite
-    </h2>
+    <h2 class="text-5xl">Favourite</h2>
   </div>
 </template>
 <style lang="scss" scoped>

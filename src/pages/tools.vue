@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { useHead } from '@vueuse/head'
+import { useHead } from '@vueuse/head';
 
 useHead({
   title: 'Tools - Remembrall',
@@ -9,7 +9,7 @@ useHead({
       content: 'Dashboard',
     },
   ],
-})
+});
 </script>
 
 <template>

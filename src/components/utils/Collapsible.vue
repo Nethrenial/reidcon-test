@@ -78,47 +78,45 @@ const props = defineProps({
     default: () => {},
     type: Function,
   },
-})
+});
 
-const open = ref(props.isOpen)
-const height = ref(props.isOpen ? 'auto' : '0px')
+const open = ref(props.isOpen);
+const height = ref(props.isOpen ? 'auto' : '0px');
 
-const closeOnNextTick = ref(false)
-const transitioning = ref(false)
+const closeOnNextTick = ref(false);
+const transitioning = ref(false);
 
-const inner = ref<HTMLElement | null>(null)
+const inner = ref<HTMLElement | null>(null);
 
 watch(open, (newVal, oldVal) => {
-  transitioning.value = true
-  height.value = `${(inner.value as HTMLElement).scrollHeight}px`
-  if (oldVal === true)
-    closeOnNextTick.value = true
-})
+  transitioning.value = true;
+  height.value = `${(inner.value as HTMLElement).scrollHeight}px`;
+  if (oldVal === true) closeOnNextTick.value = true;
+});
 
 watch(props, (newVal, oldVal) => {
-  open.value = newVal.isOpen
-})
+  open.value = newVal.isOpen;
+});
 
 onUpdated(() => {
   nextTick(() => {
     window.setTimeout(() => {
       if (closeOnNextTick.value) {
-        height.value = '0px'
-        closeOnNextTick.value = false
+        height.value = '0px';
+        closeOnNextTick.value = false;
       }
-    })
-  })
-})
+    });
+  });
+});
 
 function handleClick() {
-  props.onCollapse(!props.isOpen)
-  open.value = !open.value
+  props.onCollapse(!props.isOpen);
+  open.value = !open.value;
 }
 
 function handleEnd() {
-  if (height.value !== '0px')
-    height.value = 'auto'
-  transitioning.value = false
+  if (height.value !== '0px') height.value = 'auto';
+  transitioning.value = false;
 }
 </script>
 

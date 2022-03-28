@@ -1,10 +1,9 @@
 <script lang="ts" setup>
-import IconAdd from '~icons/carbon/add'
-import { useLayoutStore } from '@/stores/layout.store'
+import IconAdd from '~icons/carbon/add';
+import { useLayoutStore } from '@/stores/layout.store';
 
-const layoutStore = useLayoutStore()
-const store = storeToRefs(layoutStore)
-
+const layoutStore = useLayoutStore();
+const store = storeToRefs(layoutStore);
 </script>
 
 <template>
@@ -18,7 +17,10 @@ const store = storeToRefs(layoutStore)
         </transition>
       </router-view>
     </TheAppContainer>
-    <button class="add-new-task-fab" @click="store.addTaskModelOpen.value = true">
+    <button
+      class="add-new-task-fab"
+      @click="store.addTaskModelOpen.value = true"
+    >
       <IconAdd />
     </button>
   </div>
@@ -86,9 +88,9 @@ const store = storeToRefs(layoutStore)
 
   // }
 
-//   .add-new-task-fab {
+  //   .add-new-task-fab {
 
-// }
+  // }
 }
 
 @media (max-width: 768px) {
@@ -99,22 +101,20 @@ const store = storeToRefs(layoutStore)
     left: 0;
     right: 0;
     grid-template-columns: 1fr;
-
   }
 
   .add-new-task-fab {
-  // height: 60px;
-  // width: 60px;
-  // font-size: 4rem;
-  // bottom: 1rem;
-  // right: 50%;
-  // transform: translateX(50%);
-  // z-index: 0;
-  // &:hover {
-  //   transform: translateY(-5%) translateX(50%);
-  // }
-  display: none;
+    // height: 60px;
+    // width: 60px;
+    // font-size: 4rem;
+    // bottom: 1rem;
+    // right: 50%;
+    // transform: translateX(50%);
+    // z-index: 0;
+    // &:hover {
+    //   transform: translateY(-5%) translateX(50%);
+    // }
+    display: none;
+  }
 }
-}
-
 </style>

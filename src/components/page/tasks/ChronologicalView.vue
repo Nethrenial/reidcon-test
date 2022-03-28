@@ -7,7 +7,5 @@
 .all-tasks {
   margin-block: 2rem;
   width: 100%;
-
 }
-
 </style>

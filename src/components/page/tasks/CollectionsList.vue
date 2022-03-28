@@ -1,5 +1,4 @@
 <script setup lang="ts">
-
 const items = ref([
   {
     title: 'Collection1',
@@ -21,7 +20,7 @@ const items = ref([
     title: 'Collection5',
     ratio: '6/8',
   },
-])
+]);
 </script>
 
 <template>
@@ -45,9 +44,7 @@ h2 {
 
 @media (max-width: 768px) {
   .collections-list {
-      grid-template-columns: repeat(2, 1fr);
-
+    grid-template-columns: repeat(2, 1fr);
   }
 }
-
 </style>

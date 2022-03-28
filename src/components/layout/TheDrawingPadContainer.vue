@@ -1,21 +1,19 @@
 <template>
-  <main class="app-container">
+  <main class="drawing-pad-container">
     <slot />
   </main>
 </template>
 
 <style lang="scss" scoped>
-.app-container {
+.drawing-pad-container {
   grid-column: 2 / 3;
   background-color: var(--color-darker);
   color: #fff;
   overflow-y: auto;
   overflow-x: hidden;
   height: calc(100vh - 60px);
-  padding-top: 2rem;
-
   display: grid;
-  grid-template-columns: 300px 1fr 300px;
+  grid-template-columns: 1rem 1fr 1rem;
 
   &::-webkit-scrollbar {
     width: 0.5rem;

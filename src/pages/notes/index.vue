@@ -1,34 +1,35 @@
 <script setup lang="ts">
-import DailyOverview from '@/components/page/dashboard/DailyOverview.vue';
-import UserStatistics from '@/components/page/dashboard/UserStatistics.vue';
+import AllNotes from '@/components/page/notes/AllNotes.vue';
+import FavouriteCollections from '@/components/page/tasks/FavouriteCollections.vue';
+import CollectionsList from '@/components/page/tasks/CollectionsList.vue';
 
 useHead({
-  title: 'Dashboard - Remembrall',
+  title: 'Notes - Remembrall',
   meta: [
     {
       name: 'description',
-      content: 'Dashboard',
+      content: 'Tasks',
     },
   ],
 });
 
-const taskComponents = [DailyOverview, UserStatistics];
+const taskComponents = [AllNotes, CollectionsList, FavouriteCollections];
 
 const selectedComponent = ref(0);
 </script>
 
 <template>
   <ThePageContainer>
-    <h1 class="page-title">Hi Nethrenial !</h1>
-    <p class="page-subtitle">How are you feeling?</p>
-    <p class="page-subtitle">You have 5 tasks for today.</p>
+    <h1 class="page-title">Tasks</h1>
+    <p class="page-subtitle">What are you up to?</p>
+
     <div class="tab-links">
       <button
         class="tab-link"
         :class="selectedComponent === 0 ? 'active' : ''"
         @click="selectedComponent = 0"
       >
-        Daily Overview
+        All
       </button>
 
       <button
@@ -36,7 +37,14 @@ const selectedComponent = ref(0);
         :class="selectedComponent === 1 ? 'active' : ''"
         @click="selectedComponent = 1"
       >
-        Your Statistics
+        Collections
+      </button>
+      <button
+        class="tab-link"
+        :class="selectedComponent === 2 ? 'active' : ''"
+        @click="selectedComponent = 2"
+      >
+        Favorites
       </button>
     </div>
 

@@ -1,15 +1,22 @@
 <script setup lang="ts">
-import { storeToRefs } from 'pinia'
-import { useLayoutStore } from '@/stores/layout.store'
+import { storeToRefs } from 'pinia';
+import { useLayoutStore } from '@/stores/layout.store';
 
-import IconBookFill from '~icons/bi/book-fill'
+import IconBookFill from '~icons/bi/book-fill';
 
-const layoutStore = useLayoutStore()
-const { sidebarWidth } = storeToRefs(layoutStore)
+const layoutStore = useLayoutStore();
+const { sidebarWidth } = storeToRefs(layoutStore);
 </script>
 
 <template>
-  <aside class="side-bar" @transitionend="()=>{layoutStore.isSidebarTransitioning = false}">
+  <aside
+    class="side-bar"
+    @transitionend="
+      () => {
+        layoutStore.isSidebarTransitioning = false;
+      }
+    "
+  >
     <div class="side-bar-header">
       <p>Collections</p>
     </div>
@@ -18,25 +25,19 @@ const { sidebarWidth } = storeToRefs(layoutStore)
         <div class="collection-icon">
           <IconBookFill />
         </div>
-        <p class="collection-text">
-          School
-        </p>
+        <p class="collection-text">School</p>
       </li>
       <li class="collection-item">
         <div class="collection-icon">
           <IconBookFill />
         </div>
-        <p class="collection-text">
-          School
-        </p>
+        <p class="collection-text">School</p>
       </li>
       <li class="collection-item">
         <div class="collection-icon">
           <IconBookFill />
         </div>
-        <p class="collection-text">
-          School
-        </p>
+        <p class="collection-text">School</p>
       </li>
     </ul>
   </aside>
@@ -133,5 +134,4 @@ const { sidebarWidth } = storeToRefs(layoutStore)
     display: none;
   }
 }
-
 </style>

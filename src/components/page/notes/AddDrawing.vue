@@ -1,17 +1,14 @@
 <script setup lang="ts">
 import IconAdd from '~icons/carbon/add';
-import { useLayoutStore } from '@/stores/layout.store';
-
-const layoutStore = useLayoutStore();
 </script>
 <template>
-  <button class="add-task-button" @click="layoutStore.addTaskModelOpen = true">
-    <IconAdd class="icon" /> <span class="text">Add task</span>
-  </button>
+  <router-link class="add-drawing" to="/notes/new-drawing">
+    <IconAdd class="icon" /> <span class="text">New Drawing</span>
+  </router-link>
 </template>
 
 <style scoped lang="scss">
-.add-task-button {
+.add-drawing {
   display: flex;
   align-items: center;
   justify-content: flex-start;

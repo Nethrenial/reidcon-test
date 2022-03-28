@@ -1,7 +1,7 @@
 <script setup lang="ts">
-import ChronologicalView from '@/components/page/tasks/ChronologicalView.vue'
-import FavouriteCollections from '@/components/page/tasks/FavouriteCollections.vue'
-import CollectionsList from '@/components/page/tasks/CollectionsList.vue'
+import ChronologicalView from '@/components/page/tasks/ChronologicalView.vue';
+import FavouriteCollections from '@/components/page/tasks/FavouriteCollections.vue';
+import CollectionsList from '@/components/page/tasks/CollectionsList.vue';
 
 useHead({
   title: 'Tasks - Remembrall',
@@ -11,21 +11,21 @@ useHead({
       content: 'Tasks',
     },
   ],
-})
+});
 
-const taskComponents = [ChronologicalView, CollectionsList, FavouriteCollections]
+const taskComponents = [
+  ChronologicalView,
+  CollectionsList,
+  FavouriteCollections,
+];
 
-const selectedComponent = ref(0)
+const selectedComponent = ref(0);
 </script>
 
 <template>
   <ThePageContainer>
-    <h1 class="page-title">
-      Tasks
-    </h1>
-    <p class="page-subtitle">
-      What are you up to?
-    </p>
+    <h1 class="page-title">Tasks</h1>
+    <p class="page-subtitle">What are you up to?</p>
 
     <div class="tab-links">
       <button
@@ -119,7 +119,6 @@ const selectedComponent = ref(0)
     font-size: 0.8rem;
   }
 }
-
 </style>
 
 <route lang="yaml">

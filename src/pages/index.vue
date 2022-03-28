@@ -1,5 +1,4 @@
 <script setup lang="ts">
-
 useHead({
   title: 'Dashboard - Remembrall',
   meta: [
@@ -8,14 +7,12 @@ useHead({
       content: 'Dashboard',
     },
   ],
-})
+});
 </script>
 
 <template>
   <h1>Dashboard Page</h1>
-  <RouterLink to="/dashboard">
-    Dashboard
-  </RouterLink>
+  <RouterLink to="/dashboard"> Dashboard </RouterLink>
 </template>
 
 <!-- <style lang="scss" scoped></style> -->

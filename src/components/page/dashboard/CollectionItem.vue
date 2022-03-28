@@ -1,79 +1,60 @@
 <script setup lang="ts">
-
 const props = defineProps<{
-  children: Array<string>
-  title: string
-}>()
-
+  children: Array<string>;
+  title: string;
+}>();
 </script>
 
 <template>
   <div class="collection-item-container">
     <Collapsible class="collection-item">
       <template #trigger>
-        <div
-          class="heading"
-        >
+        <div class="heading">
           <p class="text">
-            {{
-              props.title
-            }}
+            {{ props.title }}
           </p>
         </div>
       </template>
       <template #closedTrigger>
-        <div
-          class="heading"
-        >
+        <div class="heading">
           <p class="text">
-            {{
-              props.title
-            }}
+            {{ props.title }}
           </p>
         </div>
       </template>
 
       <div class="collapsible">
-        <ul
-
-          v-for="child in props.children" :key="child"
-        >
+        <ul v-for="child in props.children" :key="child">
           <li class="item">
             <p class="task">
               {{ child }}
             </p>
-            <p class="date">
-              Today 6.00 p.m
-            </p>
+            <p class="date">Today 6.00 p.m</p>
           </li>
         </ul>
       </div>
     </Collapsible>
-    <div class="link">
-      Go to collection 1
-    </div>
+    <div class="link">Go to collection 1</div>
   </div>
 </template>
 
 <style lang="scss" scoped>
-
 .collection-item-container {
-display: flex;
+  display: flex;
   flex-direction: column;
   justify-content: center;
-   margin-bottom: 1rem;
-    break-inside: avoid;
-    border-radius: 20px;
-    color: #fff;
+  margin-bottom: 1rem;
+  break-inside: avoid;
+  border-radius: 20px;
+  color: #fff;
 }
 .collection-item {
   background-color: var(--color-dark);
   width: 100%;
   border-radius: 20px 20px 0 0;
- display: flex;
+  display: flex;
   flex-direction: column;
   justify-content: center;
-
 }
 .heading {
   padding: 0.5rem 1rem;
@@ -88,7 +69,6 @@ display: flex;
   justify-content: space-between;
 
   cursor: pointer;
-
 }
 
 .link {
@@ -100,7 +80,6 @@ display: flex;
   color: #fff;
   border-radius: 0 0 20px 20px;
   background-color: var(--color-dark);
-
 }
 
 .collapsible {
